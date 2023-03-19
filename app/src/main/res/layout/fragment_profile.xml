@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.dashboard.ProfileFragment"
+    android:background="@color/teal_700"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:src="@drawable/person"/>
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:text="Ramprasad Khan"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/gender"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:text="MALE"
+        android:textSize="25dp"/>
+
+    <Button
+        android:id="@+id/logout"
+        android:text="logout"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_margin="140dp"
+        />
+</LinearLayout>

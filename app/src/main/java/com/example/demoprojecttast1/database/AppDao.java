@@ -14,9 +14,20 @@ public interface AppDao {
     void addUsers(EntityModel entityModel);
 
     @Query("SELECT * FROM users")
-    List<EntityModel> getAllStudent();
+    List<EntityModel> getAllData();
 
-    /*@Query("SELECT userName,password where ")
-    Boolean checkUserAuthentication(String user,String pass);*/
+    //To Prevent Duplicate UserName
+    @Query("SELECT EXISTS(SELECT * FROM users WHERE userName=:userName)")
+    boolean isExists(String userName);
+
+    @Query("SELECT id FROM users WHERE userName=:userName AND password=:password")
+    int loginAuth(String userName,String password);
+
+    // For Login
+    @Query("SELECT EXISTS(SELECT * FROM users WHERE userName=:userName AND password=:password)")
+    boolean checkUserAuthentication(String userName,String password);
+
+    @Query("SELECT * FROM users WHERE id =:id")
+    List<EntityModel> getDetails(float id);
 
 }

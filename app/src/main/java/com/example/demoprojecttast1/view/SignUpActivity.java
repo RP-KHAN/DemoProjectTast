@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.demoprojecttast1.EntityModel;
 import com.example.demoprojecttast1.databinding.ActivitySignUpBinding;
+import com.example.demoprojecttast1.view.dashboard.DashBoardActivity;
 import com.example.demoprojecttast1.viewmodel.AppViewModel;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -43,16 +44,19 @@ public class SignUpActivity extends AppCompatActivity {
                 lastName = signUpBinding.lastName.getText().toString();
                 userName = signUpBinding.userName.getText().toString();
 
-                findGender = signUpBinding.male.toString();
-                password = signUpBinding.editTextTextPassword.toString();
+                findGender = signUpBinding.male.getText().toString();
+                password = signUpBinding.editTextTextPassword.getText().toString();
 
                 EntityModel entityModel = new EntityModel(firstName,lastName,userName,findGender,password);
 
                 appViewModel.addUsers(entityModel);
 
                 Toast.makeText(SignUpActivity.this, "Inserted", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SignUpActivity.this,DashBoardActivity.class);
+                Intent intent = new Intent(SignUpActivity.this, DashBoardActivity.class);
                 startActivity(intent);
+
+                //Toast.makeText(SignUpActivity.this,"Somthing is Wrong",Toast.LENGTH_LONG).show();
+
             }
         });
     }
